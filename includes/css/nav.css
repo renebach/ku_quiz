@@ -1,0 +1,223 @@
+body > nav {
+    backface-visibility: hidden;
+    background: rgba(0, 152, 212, 1) none repeat scroll 0 0;
+    color: #fff;
+    height: 160px;
+    left: 0;
+    margin-top: 0;
+    overflow: hidden;
+    padding-top: 0;
+    top: 0;
+    transition: background 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+    width: 100%;
+    z-index: 1000;
+	display:block;
+}
+body > nav .bar {
+    background: rgba(0, 152, 212, 1) none repeat scroll 0 0;
+    margin-top: 0;
+    transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+    width: 100%;
+    z-index: 2000;
+    height: 160px;
+	max-width:1170px;
+	margin:0 auto;
+}
+body > nav .nav-mobile {
+    background: rgba(0, 152, 212, 0) none repeat scroll 0 0;
+    display: table;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: background 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+    width: 100%;
+    z-index: -1;
+	overflow:hidden;
+}
+body > nav #logo {
+    background-image: url("../img/welcome_logov3.png");
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+	background-size: 100% auto;
+    display: block;
+   /* height: 121px;
+    left: 7%;
+    position: absolute;
+    width: 350px;*/
+    width: 25%;
+	float:left;
+    padding: 68px 0px;
+    top: 5px;
+    transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+    z-index: 1000;
+}
+body > nav #toggle {
+    cursor: pointer;
+    height: 74px;
+    padding: 45px 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+/*    transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;*/
+    width: 54px;
+    z-index: 2000;
+	font: 100 61px/1.5 "HelveticaNeueLTStd77BdCn",Helvetica,sans-serif;
+}
+body > nav #toggle .patty {
+    background: #fff none repeat scroll 0 0;
+    height: 4px;
+    margin: 10px 0;
+    transition: all 0.3s ease 0s;
+    width: 24px;
+}
+body > nav #toggle .patty::after, body > nav #toggle .patty::before {
+    background: #fff none repeat scroll 0 0;
+    content: "";
+    display: block;
+    height: 4px;
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    width: 24px;
+    z-index: -1;
+	margin:55px 0 0;
+}
+body > nav #toggle .patty::before {
+    top: -8px;
+}
+body > nav #toggle .patty::after {
+    top: 8px;
+}
+body > nav #toggle:hover {
+    cursor: pointer;
+    transition: top 0.4s ease 0s;
+}
+body > nav #toggle:hover .patty::before {
+    top: -9px;
+}
+body > nav #toggle:hover .patty::after {
+    top: 9px;
+}
+body > nav ul {
+    display: table-cell;
+    opacity: 0;
+    padding: 0;
+    top: -10%;
+    transform: perspective(600px) rotateX(10deg);
+    transition: all 0.5s cubic-bezier(0.7, 0, 0.36, 0.63) 0s;
+    vertical-align: middle;
+    visibility: hidden;
+    width: 100%;
+	margin:10em auto;
+}
+body > nav li {
+    list-style: outside none none;
+    text-align: center;
+}
+body > nav li a {
+    display: block;
+    padding: 8px 0 0;
+    width: 100%;
+	color: rgba(255, 255, 255, 1);
+	font: 100 5em/1.2 "HelveticaNeueLTStd77BdCn",Helvetica,sans-serif;
+	text-decoration:none;
+}
+body > nav li a:hover {
+	color: rgba(0, 152, 212, 0.9);
+    background: #fff none repeat scroll 0 0;
+}
+body > nav li a:focus {
+    outline: 0 none;
+}
+body > nav.open {
+    height: 100%;
+    background-color: rgba(0, 152, 212, 0.5) !important;
+    transition: none 0s ease 0s ;
+}
+body > nav.open .bar, body > nav.closing .bar {
+    background: rgba(0, 152, 212, 1) none repeat scroll 0 0;
+    margin-top: 0;
+}
+body > nav.open #logo {
+    background-image: url("../img/the_big_read_ku_logo.png") !important;
+}
+body > nav.open #toggle {
+    z-index: 2500;
+}
+
+body > nav.open .patty {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+}
+body > nav.open .patty::after {
+    background: #fff none repeat scroll 0 0 !important;
+    top: 0 !important;
+    transform: rotate(45deg);
+}
+body > nav.open .patty::before {
+    background: #fff none repeat scroll 0 0 !important;
+    top: 0 !important;
+    transform: rotate(-45deg);
+}
+body > nav.open .nav-mobile {
+    background-color: rgba(0, 152, 212, 0.9) !important;
+    z-index: 1500;
+}
+body > nav.open ul {
+    margin-top: 0;
+    opacity: 1;
+    top: 0;
+    transform: perspective(600px) rotateX(0deg);
+    visibility: visible;
+}
+body > nav.closing  {
+    height: 100%;
+    background-color: rgba(0, 152, 212, 0.5) !important;
+    transition: background-color 0.3s ease 0.3s;
+}
+body > nav.closing ul {
+    opacity: 0;
+    top: 10%;
+    transform: perspective(600px) rotateX(-10deg);
+    transition: all 0.5s cubic-bezier(0.63, 0.64, 0.3, 1) 0s;
+    visibility: visible;
+}
+
+body > nav.closing .nav-mobile {
+    background-color: rgba(0, 152, 212, 0.1) !important;
+    z-index: 1500;
+   transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+}
+
+ @media only screen and (max-width: 640px) {
+	  
+	body > nav, body > nav .bar { 
+	  height: 110px;
+ transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+	  }
+	  
+	  body > nav #logo {
+		  padding:5em 0;
+		  width:48%;
+		  margin:0 0 0 7%;
+   transition: all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1) 0s;
+	  }
+	  
+	  body > nav #toggle { 
+	  display:block;
+	  right:0em;
+	  top:0.15em;
+	  
+	  }
+  }
+
+@media only screen and (min-width: 641px) and (max-width: 768px) {
+
+	  body > nav #logo {
+		  width:34%;
+		  margin:0 0 0 7%;
+	  }
+	  body > nav #toggle { 
+	  display:block;
+	  right: 0em;
+    top: 0.5em;
+	  }
+}
